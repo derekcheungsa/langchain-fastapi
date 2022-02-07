@@ -1,0 +1,45 @@
+# IDEs
+.idea
+.vscode
+
+# Environments
+env/
+venv
+venv/
+ENV/
+
+# Project stuff
+.DS_Store
+mysql_data
+
+# Git
+.git
+.gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IPython
+profile_default/
+ipython_config.py
+
+# C extensions
+*.so
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/

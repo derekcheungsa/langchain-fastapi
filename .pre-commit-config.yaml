@@ -1,0 +1,34 @@
+repos:
+    # Git conventional commit
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    # PyLint Linter  revision
+-   repo: local
+    hooks:
+    -   id: pylint
+        name: pylint
+        entry: python -m pylint
+        language: python
+        types: [python]
+        additional_dependencies: [pylint]
+        args:
+        - --disable=C0114,C0116,C0115,E0401,E0611
+        - --max-line-length=100
+        - -d duplicate-code
+#     # Run tests
+# -   repo: local
+#     hooks:
+#     -   id: unittest
+#         name: unittest
+#         entry: python -m unittest
+#         language: python
+#         types: [python]
+#         additional_dependencies: [flask, flask_cors, flask_restful, flask_unittest, pydash, jsonschema, python-dotenv]
+#         args: ["-v"]
+#         pass_filenames: false
+#         stages: [commit]
