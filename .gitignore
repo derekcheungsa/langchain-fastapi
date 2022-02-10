@@ -44,7 +44,12 @@ cython_debug/
 # Testing stuff
 .pytest_cache
 htmlcov
+assets
 .coverage
+coverage.html
+report.html
+tests/report.html
+tests/.coverage
 
 # OS stuff
 .DS_Store
