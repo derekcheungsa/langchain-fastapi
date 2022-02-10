@@ -2,9 +2,6 @@
   <a href="https://fastapi.tiangolo.com"><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI"></a>
 </p>
 <p align="center">
-    <em>FastAPI Quick, high performance, easy to learn, fast to code, ready for production</em>
-</p>
-<p align="center">
 <a href="https://github.com/tiangolo/fastapi/actions?query=workflow%3ATest+event%3Apush+branch%3Amaster" target="_blank">
     <img src="https://github.com/tiangolo/fastapi/workflows/Test/badge.svg?event=push&branch=master" alt="Test">
 </a>
@@ -35,8 +32,23 @@
 
 
 ### Testing
-  pytest
-  coverage run -m pytest 
+  Run tests 
+  ```console
+  pytest -v tests/
+  ```
+  Tests report 
+  ```console  
+  pytest --html=tests/report.html --self-contained-html
+  ```
+  Coverage Report
+  ```console
+  pytest --cov=app tests/
+  ```
+  Coverage HTML Report
+  ```console
+  pytest --cov=app tests/ --cov-report html:tests/.coverage
+  ```
+ 
 
 ### Run
   python run.py
