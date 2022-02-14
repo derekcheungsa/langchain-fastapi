@@ -49,7 +49,7 @@ assets
 coverage.html
 report.html
 tests/report.html
-tests/.coverage
+tests/coverage/*
 
 # OS stuff
 .DS_Store
