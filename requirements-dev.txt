@@ -14,7 +14,12 @@ PyMySQL==1.0.2
 pydash==5.1.0
 dotmap==1.3.23
 
-# DEV
+# App CLI
+poetry==1.1.13
+poetry-core==1.0.7
+typer
+
+# DEV #
 
 # testing
 requests==2.27.1
