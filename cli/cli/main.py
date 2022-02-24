@@ -4,7 +4,7 @@ from os import system as shell
 app = typer.Typer()
 
 @app.command()
-def run(env: str = 'dev'):
+def start(env: str = 'dev'):
     '''
     Run app in different envs
     '''
