@@ -1,18 +1,17 @@
 <p align="center">
   <a href="https://gitlab.com/juanesquintero/fastapi-template"><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI"></a>
+  
+  <h1 style="margin-top: -80px;" align="center">
+    <i> JQ </i> &nbsp; TEMPLATE
+  </h1>
 </p>
 
-<h1 style="margin-top: -80px;" align="center">
-<i> JQ </i> &nbsp; TEMPLATE
-</h1>
+<br>
 
-
-
----
 
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
 
-<br>
+
 
 ## Local Environment
 This project can be run it on your local machine or in a docker container,
@@ -50,7 +49,9 @@ https://www.sqlalchemy.org/
 
 
 ## SetUp
-  ###Local
+
+  ###Locally
+
   After install the local environment pyenv use the certain python version and upgrade pip and install the venv package.
   
   ````console
@@ -60,11 +61,21 @@ https://www.sqlalchemy.org/
 
   Create a <b><i>virtual environment</i></b> with python virtualenv
   https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
   ````console
   $ python -m pip install virtualenv 
   $ python -m venv venv
   ````
+
+  Activate the <b><i>virtual environment</i></b>
+
+  ````console
+  $ source venv/bin/activate
+  (venv)$ which python
+  ````
   
+  ###Containerized
+
   Create <b><i>.env</i></b> file with the environment variables
 
     DB_HOST=localhost 
@@ -72,6 +83,7 @@ https://www.sqlalchemy.org/
     DB_SCHEMA=academy
     DB_USER=root
     DB_PASSWORD=admin
+
 <br>
 
 ## Folder Structure  
