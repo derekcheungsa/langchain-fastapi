@@ -1,5 +1,5 @@
 app_description = '''
-FastAPI Quickstart API helps you do awesome stuff. 🚀
+FastAPI Template API helps you do awesome stuff. 🚀
 
 ### Courses
 
@@ -15,7 +15,7 @@ You will be able to:
 * **Read users** (_not implemented_).
 '''
 APP_CONFIG = dict(
-    title='FastAPI Quickstart',
+    title='FastAPI Template',
     version='0.0.1',
     description=app_description,
     contact={
