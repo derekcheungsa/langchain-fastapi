@@ -11,7 +11,8 @@
 
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
 
-
+## About
+This project ...
 
 ## Local Environment
 This project can be run it on your local machine or in a docker container,
@@ -33,16 +34,19 @@ so you can install just Docker or Pyenv and virtualenv.
 
 ## Requirements
 
-Python 3.10.2
+<i>Python</i> 3.10.2
 https://www.python.org/downloads/release/python-3102/
 
-FastAPI 0.73.0
+<i>MySQL</i> 8.0 
+https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
+
+<i>FastAPI</i> 0.73.0
 https://fastapi.tiangolo.com/
 
-Typer
+<i>Typer</i>
 https://typer.tiangolo.com/
 
-SQLAlchemy 1.4.31
+<i>SQLAlchemy</i> 1.4.31
 https://www.sqlalchemy.org/
 
 <br>
@@ -50,9 +54,17 @@ https://www.sqlalchemy.org/
 
 ## SetUp
 
+  Create <b><i>.env</i></b> file with the environment variables
+
+    DB_HOST=localhost 
+    DB_PORT=3305
+    DB_SCHEMA=academy
+    DB_USER=root
+    DB_PASSWORD=admin
+
   ###Locally
 
-  After install the local environment pyenv use the certain python version and upgrade pip and install the venv package.
+  After install the local environment with pyenv use the certain python version and upgrade pip.
   
   ````console
   $ pyenv shell 3.10.2
@@ -76,13 +88,22 @@ https://www.sqlalchemy.org/
   
   ###Containerized
 
-  Create <b><i>.env</i></b> file with the environment variables
+  After install Docker & docker-compose, create the images & instance the containers.
+  
+  ````console
+  $ docker-compose up
+  ````
 
-    DB_HOST=localhost 
-    DB_PORT=3305
-    DB_SCHEMA=academy
-    DB_USER=root
-    DB_PASSWORD=admin
+The fastapi app now is running on http://localhost:8001 and the mysql database on localhost:3305
+
+###Database
+You can rather install MySQL engine locally or simply use the docker container created above.
+Just remember to change the .env connection variables.
+In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the proper database setup.
+
+
+
+---
 
 <br>
 
