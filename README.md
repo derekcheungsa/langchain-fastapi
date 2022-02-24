@@ -12,10 +12,20 @@
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
 
 ## About
-This project ...
-
+This project is a template or scaffolding for FastAPI framework with Python 3.10, to easily start your project without wasting time on basic  big project implementations like:
+  - Development Guidelines
+  - Clean folder tree
+  - FastAPI advanced config & features
+  - Application CLI
+  - Dockerization
+  - SQL database connection
+  - Unit Testing
+  - Coverage report
+  - Linting
+  - Git hooks
+  
 ## Local Environment
-This project can be run it on your local machine or in a docker container,
+This template can be run it on your local machine or in a docker container,
 so you can install just Docker or Pyenv and virtualenv.
 
   <b>Pyenv</b> <br>
