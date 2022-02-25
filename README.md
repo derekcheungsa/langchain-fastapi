@@ -173,6 +173,21 @@ You will see the JSON response as:
 <br>
 
 ## CLI
+This template counts with a custom CLI for basic commands, for setting up just go to cli/cli/ and run the following command
+```console
+  (venv)$ 
+```
+
+  Run or start server 
+  ```console
+  (venv)$ app-cli start
+  ```
+
+To change the application CLI command just modify the following line on the  <b><i>cli/cli/pyproject.toml</i></b> file.
+```TOML
+[tool.poetry.scripts]
+app-cli = "cli.main:app"
+```
 
 <br>
 
