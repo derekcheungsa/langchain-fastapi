@@ -1,17 +1,17 @@
-<div align="center">
-  
-<img height="100" width="110" style="margin-bottom: -55px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png"> 
+<div align="center"> 
+<img height="100" width="110" style="margin-bottom: -55px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
+<br>
 
-<br>    
-
-#FastAPI &nbsp;TEMPLATE
-
+# FastAPI &nbsp;TEMPLATE
 </div>
 
 <br>
 
-
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
+
+---
+
+<br>
 
 ## About
 This project is a template or scaffolding for FastAPI framework with Python 3.10, to easily start your project without wasting time on basic  big project implementations like:
@@ -26,6 +26,10 @@ This project is a template or scaffolding for FastAPI framework with Python 3.10
   - Linting
   - Git hooks
   
+---
+
+<br>
+
 ## Local Environment
 This template can be run it on your local machine or in a docker container,
 so you can install just Docker or Pyenv and virtualenv.
@@ -40,7 +44,8 @@ so you can install just Docker or Pyenv and virtualenv.
 
   <b>Docker</b> <br>
   https://www.docker.com/resources/what-container
-   
+
+---
 
 <br>
 
@@ -61,18 +66,22 @@ https://typer.tiangolo.com/
 <i>SQLAlchemy</i> 1.4.31
 https://www.sqlalchemy.org/
 
-<br>
+---
 
+<br>
 
 ## SetUp
 
   Create <b><i>.env</i></b> file with the environment variables
 
-    DB_HOST=localhost 
-    DB_PORT=3305
-    DB_SCHEMA=academy
-    DB_USER=root
-    DB_PASSWORD=admin
+  ```dosini
+  DB_HOST=localhost 
+  DB_PORT=3305
+  DB_SCHEMA=academy
+  DB_USER=root
+  DB_PASSWORD=admin
+  ```
+    
 
   ### Locally
 
@@ -112,8 +121,6 @@ The fastapi app now is running on http://localhost:8001 and the mysql database o
 You can rather install MySQL engine locally or simply use the docker container created above.
 Just remember to change the .env connection variables.
 In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the proper database setup.
-
-
 
 ---
 
