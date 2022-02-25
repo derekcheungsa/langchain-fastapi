@@ -1,9 +1,16 @@
 <p align="center">
-  <a href="https://gitlab.com/juanesquintero/fastapi-template"><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI"></a>
-  
-  <h1 style="margin-top: -80px;" align="center">
-    <i> JQ </i> &nbsp; TEMPLATE
+  <h1 align="center">
+    <img
+      height="100"
+      width="110"
+      style="margin:-22px"
+      alt="FastAPI Template"
+      src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png"
+    > 
+    <br>    
+    <i> FastAPI &nbsp;TEMPLATE</i>
   </h1>
+  
 </p>
 
 <br>
@@ -147,7 +154,7 @@ If you are in dev mode use:
 
 
 ### Run
-  The run.py file has dev env run parameters
+  The <b><i>run.py</i></b> file has dev environment parameters to run the application.
   ```console
   python run.py
   ```
@@ -165,7 +172,7 @@ You will see the JSON response as:
 
 <br>
 
-## CLI  
+## CLI
 
 <br>
 
