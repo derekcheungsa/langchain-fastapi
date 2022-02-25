@@ -1,17 +1,12 @@
-<p align="center">
-  <h1 align="center">
-    <img
-      height="100"
-      width="110"
-      style="margin:-22px"
-      alt="FastAPI Template"
-      src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png"
-    > 
-    <br>    
-    <i> FastAPI &nbsp;TEMPLATE</i>
-  </h1>
+<div align="center">
   
-</p>
+<img height="100" width="110" style="margin-bottom: -55px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png"> 
+
+<br>    
+
+#<i>FastAPI &nbsp;TEMPLATE</i>
+
+</div>
 
 <br>
 
@@ -174,13 +169,22 @@ You will see the JSON response as:
 
 ## CLI
 This template counts with a custom CLI for basic commands, for setting up just go to cli/cli/ and run the following command
-```console
-  (venv)$ 
-```
+  ```console
+    (venv)$ 
+  ```
+  
+  Show commands
+  ```console
+  (venv)$ app-cli --help
+  ```
 
-  Run or start server 
+  Run or start api server <small>(Dev mode by default)</small>
   ```console
   (venv)$ app-cli start
+
+  (venv)$ app-cli start --env=prod
+  
+  (venv)$ app-cli start --help
   ```
 
 To change the application CLI command just modify the following line on the  <b><i>cli/cli/pyproject.toml</i></b> file.
