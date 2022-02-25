@@ -4,7 +4,7 @@
 
 <br>    
 
-#<i>FastAPI &nbsp;TEMPLATE</i>
+#FastAPI &nbsp;TEMPLATE
 
 </div>
 
@@ -74,7 +74,7 @@ https://www.sqlalchemy.org/
     DB_USER=root
     DB_PASSWORD=admin
 
-  ###Locally
+  ### Locally
 
   After install the local environment with pyenv use the certain python version and upgrade pip.
   
@@ -98,7 +98,7 @@ https://www.sqlalchemy.org/
   (venv)$ which python
   ````
   
-  ###Containerized
+  ### Containerized
 
   After install Docker & docker-compose, create the images & instance the containers.
   
@@ -108,7 +108,7 @@ https://www.sqlalchemy.org/
 
 The fastapi app now is running on http://localhost:8001 and the mysql database on localhost:3305
 
-###Database
+### Database
 You can rather install MySQL engine locally or simply use the docker container created above.
 Just remember to change the .env connection variables.
 In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the proper database setup.
@@ -120,7 +120,30 @@ In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the p
 <br>
 
 ## Folder Structure  
-
+    📦fastapi-template
+     ┣ 📂app
+     ┃ ┣ 📂db
+     ┃ ┣ 📂models
+     ┃ ┣ 📂routers
+     ┃ ┣ 📂schemas
+     ┃ ┣ 📂shared
+     ┃ ┣ 📜__init__.py
+     ┃ ┗ 📜main.py
+     ┣ 📂cli
+     ┣ 📂tests
+     ┣ 📜.dockerignore
+     ┣ 📜.env
+     ┣ 📜.gitignore
+     ┣ 📜.pre-commit-config.yaml
+     ┣ 📜.python-version
+     ┣ 📜DEVGUIDE.md
+     ┣ 📜Dockerfile
+     ┣ 📜README.md
+     ┣ 📜config.py
+     ┣ 📜docker-compose.yml
+     ┣ 📜requirements-dev.txt
+     ┣ 📜requirements.txt
+     ┗ 📜run.py
 
 <br>
 
@@ -168,12 +191,15 @@ You will see the JSON response as:
 <br>
 
 ## CLI
-This template counts with a custom CLI for basic commands, for setting up just go to cli/cli/ and run the following command
-  ```console
-    (venv)$ 
-  ```
+This template counts with a custom CLI to execute clear and simple commands instead long tedious native commands. 
+https://typer.tiangolo.com/tutorial/package/
+
+Setting up running the following command in the path cli/cli/
+```console
+  (venv)$ poetry install
+ ```
   
-  Show commands
+  Show available commands
   ```console
   (venv)$ app-cli --help
   ```
@@ -195,7 +221,8 @@ app-cli = "cli.main:app"
 
 <br>
 
-## Testing
+## Testing 
+
   Run tests 
   ```console
   pytest -v tests/
