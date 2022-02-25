@@ -1,15 +1,14 @@
 <div align="center"> 
-<img height="100" width="110" style="margin-bottom: -55px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
+<img height="100" width="110" style="margin-bottom: -100px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
 <br>
 
 # FastAPI &nbsp;TEMPLATE
 </div>
 
 <br>
+<br>
 
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
-
----
 
 <br>
 
