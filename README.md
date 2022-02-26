@@ -1,16 +1,15 @@
-<div align="center"> 
-<img height="100" width="110" style="margin-bottom: -100px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
+<center> 
+<img height="100" width="110" style="margin-bottom: -70px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
 <br>
-
-# FastAPI &nbsp;TEMPLATE
-</div>
+<h1>FastAPI &nbsp;TEMPLATE</h1>
+</center>
 
 <br>
 <br>
 
 **Source Code**: <a href="https://gitlab.com/juanesquintero/fastapi-template" target="_blank"> https://gitlab.com/juanesquintero/fastapi-template </a>
 
-<br>
+---
 
 ## About
 This project is a template or scaffolding for FastAPI framework with Python 3.10, to easily start your project without wasting time on basic  big project implementations like:
@@ -74,6 +73,7 @@ https://www.sqlalchemy.org/
   Create <b><i>.env</i></b> file with the environment variables
 
   ```dosini
+  # .env
   DB_HOST=localhost 
   DB_PORT=3305
   DB_SCHEMA=academy
@@ -158,8 +158,6 @@ In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the p
 
 ```console
 (venv)$ pip install requirements.txt
-
----> 100%
 ```
 
 </div>
@@ -170,8 +168,6 @@ If you are in dev mode use:
 
 ```console
 (venv)$ pip install requirements-dev.txt
-
----> 100%
 ```
 
 </div>
@@ -197,13 +193,13 @@ You will see the JSON response as:
 <br>
 
 ## CLI
-This template counts with a custom CLI to execute clear and simple commands instead long tedious native commands. 
+This template counts with a custom CLI to execute clear and simple commands instead long and tedious native commands. 
 https://typer.tiangolo.com/tutorial/package/
 
 Setting up running the following command in the path cli/cli/
-```console
+  ```console
   (venv)$ poetry install
- ```
+  ```
   
   Show available commands
   ```console
