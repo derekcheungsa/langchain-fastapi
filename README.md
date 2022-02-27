@@ -1,8 +1,8 @@
-<center> 
+<div align="center"> 
 <img height="100" width="110" style="margin-bottom: -70px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
 <br>
-<h1>FastAPI &nbsp;TEMPLATE</h1>
-</center>
+<h1 align="center" style="text-decoration: none;"> FastAPI &nbsp;TEMPLATE </h1>
+</div>
 
 <br>
 <br>
@@ -61,9 +61,6 @@ https://fastapi.tiangolo.com/
 <i>Typer</i>
 https://typer.tiangolo.com/
 
-<i>SQLAlchemy</i> 1.4.31
-https://www.sqlalchemy.org/
-
 ---
 
 <br>
@@ -73,7 +70,6 @@ https://www.sqlalchemy.org/
   Create <b><i>.env</i></b> file with the environment variables
 
   ```dosini
-  # .env
   DB_HOST=localhost 
   DB_PORT=3305
   DB_SCHEMA=academy
@@ -225,23 +221,7 @@ app-cli = "cli.main:app"
 
 ## Testing 
 
-  Run tests 
-  ```console
-  pytest -v tests/
-  ```
-  Tests report 
-  ```console  
-  pytest --html=tests/report.html --self-contained-html
-  ```
-  Coverage Report
-  ```console
-  pytest --cov=app tests/
-  ```
-  Coverage HTML Report
-  ```console
-  pytest --cov=app tests/ --cov-report html:tests/.coverage
-  ```
-
+  
 <br>
 
 ## API Docs
@@ -265,24 +245,39 @@ You will see the alternative automatic documentation (provided by <a href="https
 
 <br> 
 
-## Optional Dependencies
+## Other Dependencies
 
+#### Core
+[python-dotenv](https://pypi.org/project/python-dotenv/) <br>
+[cryptography](https://pypi.org/project/cryptography/)
 
-* <a href="https://github.com/esnme/ultrajson" target="_blank"><code>ujson</code></a> - for faster JSON <abbr title="converting the string that comes from an HTTP request into Python data">"parsing"</abbr>.
-* <a href="https://github.com/JoshData/python-email-validator" target="_blank"><code>email_validator</code></a> - for email validation.
+#### Database
+[SQLAlchemy](https://www.sqlalchemy.org/) <br>
+[PyMySQL](https://pymysql.readthedocs.io/en/latest/)
 
+#### Utils
+[pydash](https://pydash.readthedocs.io/en/latest/) <br>
+[dotmap](https://pypi.org/project/dotmap/)
 
-* <a href="https://requests.readthedocs.io" target="_blank"><code>requests</code></a> - Required if you want to use the `TestClient`.
-* <a href="https://jinja.palletsprojects.com" target="_blank"><code>jinja2</code></a> - Required if you want to use the default template configuration.
-* <a href="https://andrew-d.github.io/python-multipart/" target="_blank"><code>python-multipart</code></a> - Required if you want to support form <abbr title="converting the string that comes from an HTTP request into Python data">"parsing"</abbr>, with `request.form()`.
-* <a href="https://pythonhosted.org/itsdangerous/" target="_blank"><code>itsdangerous</code></a> - Required for `SessionMiddleware` support.
-* <a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank"><code>pyyaml</code></a> - Required for Starlette's `SchemaGenerator` support (you probably don't need it with FastAPI).
-* <a href="https://github.com/esnme/ultrajson" target="_blank"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.
+#### App CLI
+poetry==1.1.13 <br>
+poetry-core==1.0.7
 
+#### Testing
+requests==2.27.1 <br>
+pytest==7.0.0 <br>
+pytest-html==3.1.1 <br>
+coverage==6.3.1 <br>
+pytest-cov==3.0.0 <br>
 
-* <a href="https://www.uvicorn.org" target="_blank"><code>uvicorn</code></a> - for the server that loads and serves your application.
-* <a href="https://github.com/ijl/orjson" target="_blank"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.
+#### Linting
+pylint==2.5.0 <br>
+pylint-plugin-utils==0.6 <br>
+autopep8==1.5.6 <br>
 
+### Git
+enforce-git-message==1.0.1 <br>
+pre-commit==2.15.0
 
 
 ## License
