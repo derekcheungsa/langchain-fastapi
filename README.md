@@ -221,7 +221,30 @@ app-cli = "cli.main:app"
 
 ## Testing 
 
-  
+  Run tests 
+  ```console
+  (venv)$ app-cli test
+  ```
+  <small>pytest -v tests/</small>
+
+  Run tests & generate html report 
+  ```console  
+  (venv)$ app-cli test --html
+  ```
+  <small>pytest -v --html=tests/report.html --self-contained-html tests//</small>
+
+  Run coverage
+  ```console
+  (venv)$ app-cli coverage
+  ```
+  <small>pytest --cov-report term-missing --cov=app tests/</small>
+
+  Run coverage & generate html Report
+  ```console
+  (venv)$ app-cli coverage --html
+  ```
+  <small>pytest --cov-report html:tests/coverage --cov-report term-missing --cov=app tests/</small>
+
 <br>
 
 ## API Docs
