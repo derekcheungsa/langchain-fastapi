@@ -13,8 +13,17 @@ def test_root():
     result = asyncio.run(root())
     assert result == {'api': 'FastAPI Template'}
 
-
 def test_root_endpoint():
     response = client.get('/')
     assert response.status_code == 200
     assert response.json() == {'api': 'FastAPI Template'}
+
+def test_courses_get_all():
+    response = client.get('/courses')
+    assert response.status_code == 200
+    assert type(response.json()) is list
+
+def test_courses_get_one():
+    response = client.get('/courses/61d21fdc00988e6ca9284474')
+    assert response.status_code == 200
+    assert type(response.json()) is dict
