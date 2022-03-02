@@ -231,7 +231,7 @@ app-cli = "cli.main:app"
   ```console  
   (venv)$ app-cli test --html
   ```
-  <small>pytest -v --html=tests/report.html --self-contained-html tests//</small>
+  <small>pytest -v --html=tests/report.html --self-contained-html tests/</small>
 
   Run coverage
   ```console
