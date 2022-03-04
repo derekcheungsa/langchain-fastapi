@@ -1,3 +1,15 @@
+from pydantic import BaseSettings
+
+class Settings(BaseSettings):
+    db_host: str = 'localhost'
+    db_port: str = '3306'
+    db_user: str = 'root'
+    db_password: str = ''
+    db_schema: str = 'academy'
+
+    class Config:
+        env_file = '.env'
+
 app_description = '''
 FastAPI Template API helps you do awesome stuff. 🚀
 
@@ -14,6 +26,7 @@ You will be able to:
 * **Create users** (_not implemented_).
 * **Read users** (_not implemented_).
 '''
+
 APP_CONFIG = dict(
     title='FastAPI Template',
     version='0.0.1',
