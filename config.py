@@ -1,4 +1,31 @@
+import os
 from pydantic import BaseSettings
+from logging import DEBUG, getLogger, basicConfig, FileHandler, Formatter, Logger
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+'''LOGGING CONFIG'''
+log_format = '%(asctime)s:%(levelname)s:%(name)s:%(message)s'
+log_dir = base_dir + '/logs'
+
+def create_logger(level: str):
+    LEVEL = level.upper()
+    file_handler = FileHandler(f'{log_dir}/{LEVEL}.log')
+    file_handler.setFormatter(Formatter(log_format))
+    logger = getLogger(f'{level}_logger')
+    logger.setLevel(LEVEL)
+    logger.addHandler(file_handler)
+
+# GENERAL LOGS (ALL)
+getLogger().setLevel(DEBUG)
+basicConfig(filename=log_dir+'/GENERAL.log', level=DEBUG, format=log_format)
+# ERROR LOGS
+create_logger('error')
+# INFO LOGS
+create_logger('info')
+
+'''END LOGGING CONFIG'''
+
 
 class Settings(BaseSettings):
     db_host: str = 'localhost'
@@ -7,8 +34,12 @@ class Settings(BaseSettings):
     db_password: str = ''
     db_schema: str = 'academy'
 
+    error_logger: Logger = getLogger('error_logger')
+    info_logger: Logger = getLogger('info_logger')
+
     class Config:
         env_file = '.env'
+
 
 app_description = '''
 FastAPI Template API helps you do awesome stuff. 🚀
