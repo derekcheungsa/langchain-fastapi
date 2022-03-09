@@ -28,13 +28,13 @@ This project is a template or scaffolding for FastAPI framework with Python 3.10
 
 <br>
 
-## Local Environment
+## Set up local environment
 This template can be run it on your local machine or in a docker container,
-so you can install just Docker or Pyenv and virtualenv.
+so you can install just Docker or in place Pyenv and MySQL.
 
   <b>Pyenv</b> <br>
   https://help.dreamhost.com/hc/en-us/articles/216137637 <br>
-  https://realpython.com/intro-to-pyenv/
+  https://realpython.com/intro-to-pyenv/ <br>
   https://github.com/pyenv/pyenv#installation
   
   <b>venv</b> <br>
@@ -42,6 +42,11 @@ so you can install just Docker or Pyenv and virtualenv.
 
   <b>Docker</b> <br>
   https://www.docker.com/resources/what-container
+  https://www.docker.com/get-started
+
+  <small>
+    If you are in Windows it's better 
+  </small>
 
 ---
 
@@ -67,8 +72,14 @@ https://typer.tiangolo.com/
 
 ## SetUp
 
-  Create <b><i>.env</i></b> file with the environment variables
+  Clone this repo
 
+  ```console
+  git clone https://gitlab.com/juanesquintero/fastapi-template.git
+  ```
+
+  Create <b><i>.env</i></b> file with the environment variables in the project root.
+  
   ```dosini
   DB_HOST=localhost 
   DB_PORT=3305
@@ -76,22 +87,21 @@ https://typer.tiangolo.com/
   DB_USER=root
   DB_PASSWORD=admin
   ```
-    
 
   ### Locally
 
-  After install the local environment with pyenv use the certain python version and upgrade pip.
+  After install the local environment with pyenv use the certain python version ().
   
   ````console
   $ pyenv shell 3.10.2
-  $ python -m pip install --upgrade pip
+  $ pip install --upgrade pip
   ````
 
   Create a <b><i>virtual environment</i></b> with python virtualenv
   https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
   ````console
-  $ python -m pip install virtualenv 
+  $ pip install virtualenv 
   $ python -m venv venv
   ````
 
@@ -99,12 +109,16 @@ https://typer.tiangolo.com/
 
   ````console
   $ source venv/bin/activate
-  (venv)$ which python
   ````
   
+  Check the python version of the venv created above
+  ````console
+  (venv)$ which python
+  ````
+
   ### Containerized
 
-  After install Docker & docker-compose, create the images & instance the containers.
+  After install [Docker Desktop](https://www.docker.com/get-started), create the images & instance the containers.
   
   ````console
   $ docker-compose up
