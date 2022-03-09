@@ -21,12 +21,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Logs
-*.log
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
 # IPython
 profile_default/
@@ -35,11 +29,14 @@ ipython_config.py
 # C extensions
 *.so
 
-# Pyre type checker
-.pyre/
+#Docker
+Dockerfile
+docker-compose.yml
 
-# pytype static type analyzer
-.pytype/
+# Documents
+README.md
+DEVGUIDE.md
+.pre-commit.yaml
+.coverage
 
-# Cython debug symbols
-cython_debug/
+/tests
