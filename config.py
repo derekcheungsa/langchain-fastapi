@@ -28,10 +28,12 @@ create_logger('info')
 
 
 class Settings(BaseSettings):
+    db_engine: str = 'postgres'
+    db_port: str = '5432'
+
     db_host: str = 'localhost'
-    db_port: str = '3306'
     db_user: str = 'root'
-    db_password: str = ''
+    db_password: str = 'admin'
     db_schema: str = 'academy'
 
     error_logger: Logger = getLogger('error_logger')
