@@ -7,5 +7,6 @@ CREATE TABLE `academy`.`courses` (
   `hours` INT NOT NULL,
   `price` DECIMAL(5,2) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `title_UNIQUE` (`title` ASC) VISIBLE);
+  UNIQUE INDEX `title_UNIQUE` (`title` ASC) VISIBLE
+);
 
