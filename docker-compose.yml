@@ -1,5 +1,28 @@
-version: '2'
+version: '3.8'
 services:
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - DB_HOST=${DB_HOST}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_SCHEMA}
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - '5431:80'
+    depends_on:
+      - postgres
 
   mysql:
     container_name: mysql
@@ -10,7 +33,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
     ports:
-      - '3305:3306'
+      - '3306:3306'
 
   python:
     container_name: python
