@@ -9,6 +9,7 @@ cryptography==36.0.1
 # DB
 SQLAlchemy==1.4.31
 PyMySQL==1.0.2
+psycopg2-binary==2.9.3
 
 # Utils
 pydash==5.1.0
