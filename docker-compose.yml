@@ -46,6 +46,13 @@ services:
     ports:
       - '3306:3306'
 
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
+
   python:
     container_name: python
     build:
