@@ -23,7 +23,16 @@ This project is a template or scaffolding for FastAPI framework with Python 3.10
   - Coverage report
   - Linting
   - Git hooks
-  
+
+<img height="300" width="500" alt="FastAPI Template" src="https://miro.medium.com/max/1400/1*Thx7VapgMNGDOoLZ2kxBuQ.png">
+
+<br>
+
+<small>
+  All commands in this project must be run on a <b>BASH</b> type terminal.
+  (You can use git-bash in windows)
+</small>
+
 ---
 
 <br>
@@ -41,30 +50,34 @@ so you can install just Docker or in place Pyenv and MySQL.
   https://docs.python.org/es/3/library/venv.html
 
   <b>Docker</b> <br>
-  https://www.docker.com/resources/what-container
+  https://www.docker.com/resources/what-container <br>
   https://www.docker.com/get-started
 
   <small>
-    If you are in Windows it's better 
+    If you are in Windows it's better to just install the python specific version,
+    since the pyenv is not supporting windows currently.
   </small>
 
 ---
 
 <br>
 
-## Requirements
+## TechStack
 
 <i>Python</i> 3.10.2
 https://www.python.org/downloads/release/python-3102/
-
-<i>MySQL</i> 8.0 
-https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
 
 <i>FastAPI</i> 0.73.0
 https://fastapi.tiangolo.com/
 
 <i>Typer</i>
 https://typer.tiangolo.com/
+
+<i>PostgreSQL</i> 14.2
+https://www.postgresql.org/docs/14/release-14-2.html
+
+<i>MySQL</i> 8.0 
+https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
 
 ---
 
@@ -81,55 +94,81 @@ https://typer.tiangolo.com/
   Create <b><i>.env</i></b> file with the environment variables in the project root.
   
   ```dosini
-  DB_HOST=localhost 
-  DB_PORT=3305
+  DB_ENGINE=postgres
+  DB_PORT=5432
+  
+  DB_HOST=localhost
   DB_SCHEMA=academy
   DB_USER=root
   DB_PASSWORD=admin
   ```
+  <small>Please leave DB_ENGINE, DB_PORT at the top 2 lines of the file</samll>
 
   ### Locally
 
-  After install the local environment with pyenv use the certain python version ().
-  
-  ````console
+  After install the local environment with pyenv use the certain python version.
+  ```console
   $ pyenv shell 3.10.2
+  ```
+    
+  Or just specify the python version if you are not using pyenv with the following prefix in each command.
+
+  ```console
+  $ python3.10 -m  
+  ```
+
+  Upgrade your pip manager.
+  ```console
   $ pip install --upgrade pip
-  ````
+  ```
 
   Create a <b><i>virtual environment</i></b> with python virtualenv
   https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
-  ````console
+  ```console
   $ pip install virtualenv 
   $ python -m venv venv
-  ````
+  ```
 
   Activate the <b><i>virtual environment</i></b>
 
-  ````console
+  ```console
   $ source venv/bin/activate
-  ````
+  ```
   
   Check the python version of the venv created above
-  ````console
+  ```console
   (venv)$ which python
-  ````
+  ```
 
   ### Containerized
 
   After install [Docker Desktop](https://www.docker.com/get-started), create the images & instance the containers.
   
-  ````console
+  ```console
   $ docker-compose up
-  ````
+  ```
 
 The fastapi app now is running on http://localhost:8001 and the mysql database on localhost:3305
 
 ### Database
-You can rather install MySQL engine locally or simply use the docker container created above.
-Just remember to change the .env connection variables.
-In the <i>app/db</i> folder you will find the needed DDL & DML scripts for the proper database setup.
+You can rather install MySQL and PostgreSQL engine locally or simply use the Docker containers created above.
+Remember to change the .env connection variables if necessary.
+
+In the <i>app/db/sql/</i> folder you will find the needed DDL & DML scripts for the proper database setup.
+To enter to the Database through a UI, manage and execute the scripts you can use
+
+#### Database GUI tools
+Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for postgres.
+
+If you prefer to install some on your machine we recommend one of the following... 
+[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)  
+[phpMyAdmin](https://www.phpmyadmin.net/downloads/)
+[pgAdmin](https://www.pgadmin.org/)
+[Navicat](https://www.navicat.com/en)
+
+Use the same <b><i>.env</b></i> parameters to create the db connection.
+If you are using a Docker container remember to not use localhost as server, instead use <b><i>host.docker.internal</i></b>.
 
 ---
 
@@ -206,7 +245,7 @@ You will see the JSON response as:
 This template counts with a custom CLI to execute clear and simple commands instead long and tedious native commands. 
 https://typer.tiangolo.com/tutorial/package/
 
-Setting up running the following command in the path cli/cli/
+  Set up the application CLI running the following command in the path cli/cli/
   ```console
   (venv)$ poetry install
   ```
@@ -216,13 +255,21 @@ Setting up running the following command in the path cli/cli/
   (venv)$ app-cli --help
   ```
 
-  Run or start api server <small>(Dev mode by default)</small>
+  Run or start api server <small>(dev env & postgres db by default)</small>
   ```console
   (venv)$ app-cli start
-
-  (venv)$ app-cli start --env=prod
   
   (venv)$ app-cli start --help
+  ```
+  
+  In prod mode
+  ```
+  (venv)$ app-cli start --env=prod
+  ```
+
+  With mysql engine db
+  ```
+  (venv)$ app-cli start --db=mysql
   ```
 
 To change the application CLI command just modify the following line on the  <b><i>cli/cli/pyproject.toml</i></b> file.
