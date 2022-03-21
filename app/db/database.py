@@ -8,8 +8,8 @@ settings = Settings()
 
 db = {}
 for key, value in vars(settings).items():
-    key_trimed = key.replace('db_', '')
-    db[key_trimed] = value
+    _key = key.replace('db_', '')
+    db[_key] = value
 db = DotMap(db)
 
 dialect = 'mysql+pymysql' if db.engine == 'mysql' else 'postgresql'

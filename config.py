@@ -9,11 +9,11 @@ log_format = '%(asctime)s:%(levelname)s:%(name)s:%(message)s'
 log_dir = base_dir + '/logs'
 
 def create_logger(level: str):
-    LEVEL = level.upper()
-    file_handler = FileHandler(f'{log_dir}/{LEVEL}.log')
+    level_upper = level.upper()
+    file_handler = FileHandler(f'{log_dir}/{level_upper}.log')
     file_handler.setFormatter(Formatter(log_format))
     logger = getLogger(f'{level}_logger')
-    logger.setLevel(LEVEL)
+    logger.setLevel(level_upper)
     logger.addHandler(file_handler)
 
 # GENERAL LOGS (ALL)
