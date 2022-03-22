@@ -1,20 +1,32 @@
 import typer
-from os import system as shell
+from os import system as shell, popen as output
 
 app = typer.Typer()
 
+db_types = ['postgres', 'postgresql', 'mysql', None]
+
 @app.command()
-def start(env: str = 'dev'):
+def start(env: str = 'dev', db: str | None = None):
     '''
-    Run app in different envs
+    Run app in different envs & db engines
     '''
+    if db not in db_types:
+        typer.echo('Invalid db engine')
+        raise typer.Exit()
+
+    if db:
+        current_content = output("sed '1,2 d' .env").read().strip()
+        port = 3306 if db == 'mysql' else 5432
+        content = f'DB_ENGINE={db}\nDB_PORT={port}\n' + current_content
+        shell(f'echo "{content}" > .env')
+
     match env:
         case 'dev':
             shell('uvicorn app:app --reload')
         case 'prod':
             shell('uvicorn app:app --host 0.0.0.0 --port 80 --workers 5')
         case _:
-            pass
+            typer.echo('Invalid env')
 
 @app.command()
 def test(html: bool = False):
