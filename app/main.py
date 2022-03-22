@@ -13,11 +13,17 @@ async def root() -> dict:
     return {'api': 'FastAPI Template'}
 
 @app.get('/log', tags=['root'])
-async def settings(
+async def insert_log(
         msg: str,
         settings: Settings = Depends(get_settings)
     ) -> dict:
     settings.info_logger.info(msg)
     return { 'msg': 'message logged successfully' }
+
+@app.get('/db', tags=['root'])
+async def get_db(
+        settings: Settings = Depends(get_settings)
+    ) -> dict:
+    return { 'db': settings.db_engine }
 
 app.include_router(courses)
