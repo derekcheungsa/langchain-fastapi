@@ -1,4 +1,4 @@
-<div align="center"> 
+<div align="center">
 <img height="100" width="110" style="margin-bottom: -70px" alt="FastAPI Template" src="https://gitlab.com/uploads/-/system/project/avatar/33491624/fastapi.png">
 <br>
 <h1 align="center" style="text-decoration: none;"> FastAPI &nbsp;TEMPLATE </h1>
@@ -45,7 +45,7 @@ so you can install just Docker or in place Pyenv and MySQL.
   https://help.dreamhost.com/hc/en-us/articles/216137637 <br>
   https://realpython.com/intro-to-pyenv/ <br>
   https://github.com/pyenv/pyenv#installation
-  
+
   <b>venv</b> <br>
   https://docs.python.org/es/3/library/venv.html
 
@@ -76,7 +76,7 @@ https://typer.tiangolo.com/
 <i>PostgreSQL</i> 14.2
 https://www.postgresql.org/docs/14/release-14-2.html
 
-<i>MySQL</i> 8.0 
+<i>MySQL</i> 8.0
 https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
 
 ---
@@ -92,11 +92,11 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   ```
 
   Create <b><i>.env</i></b> file with the environment variables in the project root.
-  
+
   ```dosini
   DB_ENGINE=postgres
   DB_PORT=5432
-  
+
   DB_HOST=localhost
   DB_SCHEMA=academy
   DB_USER=root
@@ -110,11 +110,11 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   ```console
   $ pyenv shell 3.10.2
   ```
-    
+
   Or just specify the python version if you are not using pyenv with the following prefix in each command.
 
   ```console
-  $ python3.10 -m  
+  $ python3.10 -m
   ```
 
   Upgrade your pip manager.
@@ -126,7 +126,7 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
   ```console
-  $ pip install virtualenv 
+  $ pip install virtualenv
   $ python -m venv venv
   ```
 
@@ -135,7 +135,7 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   ```console
   $ source venv/bin/activate
   ```
-  
+
   Check the python version of the venv created above
   ```console
   (venv)$ which python
@@ -144,12 +144,16 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   ### Containerized
 
   After install [Docker Desktop](https://www.docker.com/get-started), create the images & instance the containers.
-  
+
   ```console
   $ docker-compose up
   ```
 
-The fastapi app now is running on http://localhost:8001 and the mysql database on localhost:3305
+The fastapi app now is running on http://localhost:8001
+MySQL database on localhost:3306
+PostgreSQL database on localhost:5432
+Adminer GUI on localhost:8080
+pgAdmin GUI on localhost:5431
 
 ### Database
 You can rather install MySQL and PostgreSQL engine locally or simply use the Docker containers created above.
@@ -161,8 +165,8 @@ To enter to the Database through a UI, manage and execute the scripts you can us
 #### Database GUI tools
 Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for postgres.
 
-If you prefer to install some on your machine we recommend one of the following... 
-[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)  
+If you prefer to install some on your machine we recommend one of the following...
+[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 [phpMyAdmin](https://www.phpmyadmin.net/downloads/)
 [pgAdmin](https://www.pgadmin.org/)
 [Navicat](https://www.navicat.com/en)
@@ -174,7 +178,7 @@ If you are using a Docker container remember to not use localhost as server, ins
 
 <br>
 
-## Folder Structure  
+## Folder Structure
     📦fastapi-template
      ┣ 📂app
      ┃ ┣ 📂db
@@ -227,7 +231,7 @@ If you are in dev mode use:
   ```console
   python run.py
   ```
-  
+
 
 ### Check it
 
@@ -242,14 +246,14 @@ You will see the JSON response as:
 <br>
 
 ## CLI
-This template counts with a custom CLI to execute clear and simple commands instead long and tedious native commands. 
+This template counts with a custom CLI to execute clear and simple commands instead long and tedious native commands.
 https://typer.tiangolo.com/tutorial/package/
 
   Set up the application CLI running the following command in the path cli/cli/
   ```console
   (venv)$ poetry install
   ```
-  
+
   Show available commands
   ```console
   (venv)$ app-cli --help
@@ -258,10 +262,10 @@ https://typer.tiangolo.com/tutorial/package/
   Run or start api server <small>(dev env & postgres db by default)</small>
   ```console
   (venv)$ app-cli start
-  
+
   (venv)$ app-cli start --help
   ```
-  
+
   In prod mode
   ```
   (venv)$ app-cli start --env=prod
@@ -280,16 +284,16 @@ app-cli = "cli.main:app"
 
 <br>
 
-## Testing 
+## Testing
 
-  Run tests 
+  Run tests
   ```console
   (venv)$ app-cli test
   ```
   <small>pytest -v tests/</small>
 
-  Run tests & generate html report 
-  ```console  
+  Run tests & generate html report
+  ```console
   (venv)$ app-cli test --html
   ```
   <small>pytest -v --html=tests/report.html --self-contained-html tests/</small>
@@ -306,6 +310,38 @@ app-cli = "cli.main:app"
   ```
   <small>pytest --cov-report html:tests/coverage --cov-report term-missing --cov=app tests/</small>
 
+<br>
+
+<br>
+
+## Pre-Commit Hooks
+  The pre-commit git hooks consists on run some checks before confirm or commit your changes on the local repo, the .pre-commit-config.yml file contains the checks.
+  https://pre-commit.com/ <br>
+  https://pypi.org/project/pre-commit/ <br>
+
+  To set it up, you need to run this command on the root folder of the project
+  ```console
+  (venv)$ pre-commit
+  (venv)$ pre-commit autoupdate
+  ```
+
+  It runs each time you try to commit your changes, or you can just run it manually
+  ```console
+  (venv)$ pre-commit run --all-files
+  ```
+
+
+  The following local checks are implemented:
+
+  - Linting with PyLint
+  ```console
+  (venv)$ pylint *
+  ```
+
+  - Testing with PyTest
+  ```console
+  (venv)$ pytest -v tests/
+  ```
 <br>
 
 ## API Docs
@@ -327,7 +363,7 @@ You will see the alternative automatic documentation (provided by <a href="https
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)
 
 
-<br> 
+<br>
 
 ## Other Dependencies
 
