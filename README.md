@@ -165,13 +165,13 @@ In the <i>app/db/sql/</i> folder you will find the needed DDL & DML scripts for 
 To enter to the Database through a UI, manage and execute the scripts you can use
 
 #### Database GUI tools
-Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for postgres.
+Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for PostgreSQL.
 
 If you prefer to install some on your machine we recommend one of the following...
-[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
-[phpMyAdmin](https://www.phpmyadmin.net/downloads/)
-[pgAdmin](https://www.pgadmin.org/)
-[Navicat](https://www.navicat.com/en)
+[MySQL Workbench](https://dev.mysql.com/downloads/workbench/) <br>
+[phpMyAdmin](https://www.phpmyadmin.net/downloads/) <br>
+[pgAdmin](https://www.pgadmin.org/) <br>
+[Navicat](https://www.navicat.com/en) <br>
 
 Use the same <b><i>.env</b></i> parameters to create the db connection.
 If you are using a Docker container remember to not use localhost as server, instead use <b><i>host.docker.internal</i></b>.
@@ -367,40 +367,44 @@ You will see the alternative automatic documentation (provided by <a href="https
 
 <br>
 
-## Other Dependencies
+## Python Packages
 
-#### Core
-[python-dotenv](https://pypi.org/project/python-dotenv/) <br>
-[cryptography](https://pypi.org/project/cryptography/)
+**Core** <br>
+[python-dotenv==0.19.2](https://pypi.org/project/python-dotenv/) <br>
+[cryptography==36.0.1](https://pypi.org/project/cryptography/)
 
-#### Database
-[SQLAlchemy](https://www.sqlalchemy.org/) <br>
-[PyMySQL](https://pymysql.readthedocs.io/en/latest/)
+**Database** <br>
+[SQLAlchemy==1.4.31](https://www.sqlalchemy.org/) <br>
+[PyMySQL==1.0.2](https://pymysql.readthedocs.io/en/latest/) <br>
+[psycopg2-binary==2.9.3]
 
-#### Utils
-[pydash](https://pydash.readthedocs.io/en/latest/) <br>
-[dotmap](https://pypi.org/project/dotmap/)
+**Utils** <br>
+[pydash==5.1.0](https://pydash.readthedocs.io/en/latest/) <br>
+[dotmap==1.3.23](https://pypi.org/project/dotmap/)
 
-#### App CLI
-poetry==1.1.13 <br>
-poetry-core==1.0.7
+**CLI** <br>
+[poetry==1.1.13](https://python-poetry.org/) <br>
+[poetry-core==1.0.7](https://pypi.org/project/poetry-core/)
+[typer==0.4.0](https://typer.tiangolo.com/)
 
-#### Testing
-requests==2.27.1 <br>
-pytest==7.0.0 <br>
-pytest-html==3.1.1 <br>
-coverage==6.3.1 <br>
-pytest-cov==3.0.0 <br>
+### Development Packages
+**Testing** <br>
+[requests==2.27.1] <br>
+[pytest==7.0.0] <br>
+[pytest-html==3.1.1] <br>
+[coverage==6.3.1] <br>
+[pytest-cov==3.0.0] <br>
 
-#### Linting
-pylint==2.5.0 <br>
-pylint-plugin-utils==0.6 <br>
-autopep8==1.5.6 <br>
+**Linting** <br>
+[pylint==2.5.0] <br>
+[pylint-plugin-utils==0.6] <br>
+[autopep8==1.5.6] <br>
 
-### Git
-enforce-git-message==1.0.1 <br>
-pre-commit==2.15.0
+**Git** <br>
+[enforce-git-message==1.0.1] <br>
+[pre-commit==2.15.0]
 
+<br>
 
 ## License
 
