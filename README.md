@@ -370,6 +370,10 @@ You will see the alternative automatic documentation (provided by <a href="https
 ## Python Packages
 
 **Core** <br>
+[pydantic==1.9.0]([)](https://pydantic-docs.helpmanual.io/) <br>
+[fastapi==0.73.0](https://fastapi.tiangolo.com/) <br>
+[uvicorn==0.17.0.post1](https://www.uvicorn.org/)
+
 [python-dotenv==0.19.2](https://pypi.org/project/python-dotenv/) <br>
 [cryptography==36.0.1](https://pypi.org/project/cryptography/)
 
@@ -384,7 +388,7 @@ You will see the alternative automatic documentation (provided by <a href="https
 
 **CLI** <br>
 [poetry==1.1.13](https://python-poetry.org/) <br>
-[poetry-core==1.0.7](https://pypi.org/project/poetry-core/)
+[poetry-core==1.0.7](https://pypi.org/project/poetry-core/) <br>
 [typer==0.4.0](https://typer.tiangolo.com/)
 
 #### Development Packages
