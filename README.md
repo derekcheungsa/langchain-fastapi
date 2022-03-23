@@ -24,7 +24,9 @@ This project is a template or scaffolding for FastAPI framework with Python 3.10
   - Linting
   - Git hooks
 
+<a href="https://nabajyotiborah.medium.com/fastapi-scalable-project-structure-with-docker-compose-45dc3a9fb4c6">
 <img height="300" width="500" alt="FastAPI Template" src="https://miro.medium.com/max/1400/1*Thx7VapgMNGDOoLZ2kxBuQ.png">
+</a>
 
 <br>
 
@@ -235,7 +237,7 @@ If you are in dev mode use:
 
 ### Check it
 
-Open your browser at <a href="http://127.0.0.1:8000/" class="external-link" target="_blank"> http://127.0.0.1:8000/ </a>
+Open your browser at <a href="http://127.0.0.1:8000/" class="external-link" target="_blank"> http://localhost:8000/ </a>
 
 You will see the JSON response as:
 
@@ -315,7 +317,7 @@ app-cli = "cli.main:app"
 <br>
 
 ## Pre-Commit Hooks
-  The pre-commit git hooks consists on run some checks before confirm or commit your changes on the local repo, the .pre-commit-config.yml file contains the checks.
+  The pre-commit git hooks consists on run some checks before confirm or commit your staged changes on the local repo, the <i>.pre-commit-config.yml</i> file contains the checks. <br>
   https://pre-commit.com/ <br>
   https://pypi.org/project/pre-commit/ <br>
 
@@ -348,7 +350,7 @@ app-cli = "cli.main:app"
 
 ### Swagger - OpenAPI
 
-Now go to <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank"> http://127.0.0.1:8000/docs </a>
+Now go to <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank"> http://localhost:8000/docs </a>
 
 You will see the automatic interactive API documentation (provided by <a href="https://github.com/swagger-api/swagger-ui" class="external-link" target="_blank">Swagger UI</a>):
 
@@ -356,7 +358,7 @@ You will see the automatic interactive API documentation (provided by <a href="h
 
 ### ReDoc
 
-And now, go to <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc </a>
+And now, go to <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://localhost:8000/redoc </a>
 
 You will see the alternative automatic documentation (provided by <a href="https://github.com/Rebilly/ReDoc" class="external-link" target="_blank">ReDoc</a>):
 
