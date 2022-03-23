@@ -376,7 +376,7 @@ You will see the alternative automatic documentation (provided by <a href="https
 **Database** <br>
 [SQLAlchemy==1.4.31](https://www.sqlalchemy.org/) <br>
 [PyMySQL==1.0.2](https://pymysql.readthedocs.io/en/latest/) <br>
-[psycopg2-binary==2.9.3]
+[psycopg2-binary==2.9.3](https://www.psycopg.org/docs/)
 
 **Utils** <br>
 [pydash==5.1.0](https://pydash.readthedocs.io/en/latest/) <br>
@@ -387,22 +387,22 @@ You will see the alternative automatic documentation (provided by <a href="https
 [poetry-core==1.0.7](https://pypi.org/project/poetry-core/)
 [typer==0.4.0](https://typer.tiangolo.com/)
 
-### Development Packages
+#### Development Packages
 **Testing** <br>
-[requests==2.27.1] <br>
-[pytest==7.0.0] <br>
-[pytest-html==3.1.1] <br>
-[coverage==6.3.1] <br>
-[pytest-cov==3.0.0] <br>
+requests==2.27.1 <br>
+pytest==7.0.0 <br>
+pytest-html==3.1.1 <br>
+coverage==6.3.1 <br>
+pytest-cov==3.0.0 <br>
 
 **Linting** <br>
-[pylint==2.5.0] <br>
-[pylint-plugin-utils==0.6] <br>
-[autopep8==1.5.6] <br>
+pylint==2.5.0 <br>
+pylint-plugin-utils==0.6 <br>
+autopep8==1.5.6 <br>
 
 **Git** <br>
-[enforce-git-message==1.0.1] <br>
-[pre-commit==2.15.0]
+enforce-git-message==1.0.1 <br>
+pre-commit==2.15.0
 
 <br>
 
