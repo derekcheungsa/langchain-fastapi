@@ -56,4 +56,4 @@ tests/coverage/*
 
 # Project stuff
 mysql_data
-postgres-data
+postgres_data
