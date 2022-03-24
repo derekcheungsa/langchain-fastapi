@@ -151,11 +151,11 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/
   $ docker-compose up
   ```
 
-The fastapi app now is running on http://localhost:8001
+The FastAPI app now is running on [http://localhost:8001](http://localhost:8001)
 MySQL database on localhost:3306
 PostgreSQL database on localhost:5432
-Adminer GUI on localhost:8080
-pgAdmin GUI on localhost:5431
+Adminer GUI on [localhost:8081](http://localhost:8081) 
+pgAdmin GUI on [localhost:5431](http://localhost:5431)
 
 ### Database
 You can rather install MySQL and PostgreSQL engine locally or simply use the Docker containers created above.
@@ -167,7 +167,7 @@ To enter to the Database through a UI, manage and execute the scripts you can us
 #### Database GUI tools
 Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for PostgreSQL.
 
-If you prefer to install some on your machine we recommend one of the following...
+If you prefer to install some on your machine we recommend one of the following... <br>
 [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) <br>
 [phpMyAdmin](https://www.phpmyadmin.net/downloads/) <br>
 [pgAdmin](https://www.pgadmin.org/) <br>
@@ -251,10 +251,21 @@ You will see the JSON response as:
 This template counts with a custom CLI to execute clear and simple commands instead long and tedious native commands.
 https://typer.tiangolo.com/tutorial/package/
 
-  Set up the application CLI running the following command in the path cli/cli/
+<i><small>
+Remember if you are running the app containerized to run theese CLI commads inside the docker container console
+<small></i>
+
+  Set up the application CLI running the following commands in theese locations...
+
+  <i>cli/cli/</i>
   ```console
   (venv)$ poetry install
   ```
+  <i>cli/dist</i>
+  ```console
+  (venv)$ pip install cli-0.1.0-py3-none-any.whl
+  ```
+
 
   Show available commands
   ```console
@@ -370,7 +381,7 @@ You will see the alternative automatic documentation (provided by <a href="https
 ## Python Packages
 
 **Core** <br>
-[pydantic==1.9.0]([)](https://pydantic-docs.helpmanual.io/) <br>
+[pydantic==1.9.0](https://pydantic-docs.helpmanual.io/) <br>
 [fastapi==0.73.0](https://fastapi.tiangolo.com/) <br>
 [uvicorn==0.17.0.post1](https://www.uvicorn.org/)
 
