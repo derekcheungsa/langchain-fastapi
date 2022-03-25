@@ -17,7 +17,7 @@ This project is a template or scaffolding for FastAPI framework with Python 3.10
   - Clean folder tree
   - FastAPI advanced config & features
   - Application CLI
-  - Dockerization
+  - Docker containerization
   - SQL database connection
   - Unit Testing
   - Coverage report
@@ -252,10 +252,10 @@ This template counts with a custom CLI to execute clear and simple commands inst
 https://typer.tiangolo.com/tutorial/package/
 
 <i><small>
-Remember if you are running the app containerized to run theese CLI commads inside the docker container console
+Remember if you are running the app containerized to run these CLI commands inside the docker container console
 <small></i>
 
-  Set up the application CLI running the following commands in theese locations...
+  Set up the application CLI running the following commands in these locations...
 
   <i>cli/cli/</i>
   ```console
@@ -290,6 +290,7 @@ Remember if you are running the app containerized to run theese CLI commads insi
   ```
 
 To change the application CLI command just modify the following line on the  <b><i>cli/cli/pyproject.toml</i></b> file.
+And the Dockerfile entrypoint.
 ```TOML
 [tool.poetry.scripts]
 app-cli = "cli.main:app"
