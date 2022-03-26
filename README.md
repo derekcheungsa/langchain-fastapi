@@ -405,20 +405,20 @@ You will see the alternative automatic documentation (provided by <a href="https
 
 #### Development Packages
 **Testing** <br>
-requests==2.27.1 <br>
-pytest==7.0.0 <br>
-pytest-html==3.1.1 <br>
-coverage==6.3.1 <br>
-pytest-cov==3.0.0 <br>
+[requests==2.27.1](https://docs.python-requests.org/en/latest/) <br>
+[pytest==7.0.0](https://docs.pytest.org/en/7.1.x/) <br>
+[pytest-html==3.1.1](https://pytest-html.readthedocs.io/en/latest/) <br>
+[coverage==6.3.1](https://coverage.readthedocs.io/en/6.3.2/) <br>
+[pytest-cov==3.0.0](https://pytest-cov.readthedocs.io/en/latest/) <br>
 
 **Linting** <br>
-pylint==2.5.0 <br>
-pylint-plugin-utils==0.6 <br>
-autopep8==1.5.6 <br>
+[pylint==2.5.0](https://pypi.org/project/pylint/) <br>
+[pylint-plugin-utils==0.6](https://pypi.org/project/pylint-plugin-utils/) <br>
+[autopep8==1.5.6](https://pypi.org/project/autopep8/) <br>
 
 **Git** <br>
-enforce-git-message==1.0.1 <br>
-pre-commit==2.15.0
+[enforce-git-message==1.0.1](https://pypi.org/project/enforce-git-message/) <br>
+[pre-commit==2.15.0](https://pre-commit.com/) <br>
 
 <br>
 
