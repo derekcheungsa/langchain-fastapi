@@ -17,3 +17,14 @@ def test_root_endpoint():
     response = client.get('/')
     assert response.status_code == 200
     assert response.json() == {'api': 'FastAPI Template'}
+
+def test_log_endpoint():
+    response = client.get('/log?msg=hello_world')
+    assert response.status_code == 200
+    assert response.json() == { 'msg': 'message logged successfully' }
+
+def test_db_endpoint():
+    response = client.get('/db')
+    assert response.status_code == 200
+    fields = response.json().keys()
+    assert  list(fields) == ['db']
