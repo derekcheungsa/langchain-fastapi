@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.orm import Session
 
 from app.shared.dependencies import get_db
@@ -25,8 +25,15 @@ async def get_courses_slice(
     return model.read_courses_slice(db, start, end)
 
 @courses.get('/{id}')
-async def get_course(id: str, db: Session = Depends(get_db)) -> CourseSchema:
-    return model.read_course(db, id)
+async def get_course(
+        id: str,
+        db: Session = Depends(get_db),
+        response: Response = None
+    ):
+    course = model.read_course(db, id)
+    if course:
+        response.status_code = status.HTTP_404_NOT_FOUND
+    return course if course else {}
 
 @courses.post('/')
 async def post_course(

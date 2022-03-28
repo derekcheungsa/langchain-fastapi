@@ -27,3 +27,21 @@ def test_courses_get_one():
     response = client.get('/courses/61d21fdc00988e6ca9284474')
     assert response.status_code == 200
     assert type(response.json()) is dict
+
+def test_courses_post_one():
+    response = client.post('/courses', {
+        'title': 'Course 2',
+        'description': '...',
+        'hours': 15,
+        'price': 199.19
+    })
+    assert response.status_code == 200
+    assert type(response.json()) is list
+
+def test_courses_delete_one():
+    response = client.delete('/courses/61d21fdc00988e6ca9284474')
+    assert response.status_code == 200
+    assert type(response.json()) is dict
+
+    response = client.get('/courses/61d21fdc00988e6ca9284474')
+    assert response.status_code == 404
