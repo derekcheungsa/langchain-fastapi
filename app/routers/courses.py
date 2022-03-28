@@ -31,7 +31,7 @@ async def get_course(
         response: Response = None
     ):
     course = model.read_course(db, id)
-    if course:
+    if not course:
         response.status_code = status.HTTP_404_NOT_FOUND
     return course if course else {}
 
