@@ -8,15 +8,18 @@ RUN pip install --upgrade pip
 # Copy resources
 COPY . /code
 
-# Install dependencies (prod/dev)
+# Install requirements (prod/dev)
 RUN pip install --no-cache-dir --upgrade -r /code/requirements-dev.txt
 
-# Set up app CLI
-RUN pip install --no-cache-dir --upgrade --user cli/dist/cli-0.1.0-py3-none-any.whl
+# Install app CLI
+WORKDIR /code/cli
+RUN poetry build
+RUN pip install --no-cache-dir --upgrade dist/cli-0.1.0-py3-none-any.whl
 ENV PATH="${PATH}:/root/.local/bin"
 
 # Expose port
 EXPOSE 80
+WORKDIR /code
 
 # Execution command
-CMD ["app-cli", "start", "--env", "prod"]
+ENTRYPOINT ["app-cli", "run", "--env", "prod"]
