@@ -6,7 +6,7 @@ app = typer.Typer()
 db_types = ['postgres', 'postgresql', 'mysql', None]
 
 @app.command()
-def start(env: str = 'dev', db: str | None = None):
+def run(env: str = 'dev', db: str | None = None):
     '''
     Run app in different envs & db engines
     '''
