@@ -255,15 +255,15 @@ https://typer.tiangolo.com/tutorial/package/
 Remember if you are running the app containerized to run these CLI commands inside the docker container console
 <small></i>
 
-  Set up the application CLI running the following commands in these locations...
+  Set up the application CLI running the following commands in this location...
 
-  <i>cli/cli/</i>
+  <i>cli/</i>
   ```console
   (venv)$ poetry install
-  ```
-  <i>cli/dist</i>
-  ```console
-  (venv)$ pip install cli-0.1.0-py3-none-any.whl
+
+  (venv)$ poetry build
+
+  (venv)$ pip install dist/cli-0.1.0-py3-none-any.whl
   ```
 
 
