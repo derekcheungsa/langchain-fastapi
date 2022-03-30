@@ -2,7 +2,7 @@ version: '3.8'
 services:
 
   postgres:
-    container_name: postgres
+    container_name: postgresql
     image: postgres
     restart: always
     ports:
@@ -18,7 +18,7 @@ services:
       - ./app/db/sql/inserts.postgresql:/docker-entrypoint-initdb.d/fill_tables.sql
 
   pgadmin:
-    container_name: pgadmin
+    container_name: pgadmin4
     image: dpage/pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
@@ -52,7 +52,7 @@ services:
       - '8080:8081'
 
   python:
-    container_name: python
+    container_name: python3.10
     build:
       context: .
       dockerfile: ./Dockerfile
