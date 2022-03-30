@@ -56,7 +56,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: python-fastapi
+    image: python3.10-fastapi
     volumes:
       - ./:/code
     env_file:
