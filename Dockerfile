@@ -22,4 +22,4 @@ EXPOSE 80
 WORKDIR /code
 
 # Execution command
-ENTRYPOINT ["app-cli", "run", "--env", "prod"]
+ENTRYPOINT ["app-cli", "run", "--env", "docker"]

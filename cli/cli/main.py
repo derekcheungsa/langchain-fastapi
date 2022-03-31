@@ -25,6 +25,8 @@ def run(env: str = 'dev', db: str | None = None):
             shell('uvicorn app:app --reload')
         case 'prod':
             shell('uvicorn app:app --host 0.0.0.0 --port 80 --workers 5')
+        case 'docker':
+            shell('uvicorn app:app --reload --host 0.0.0.0 --port 80')
         case _:
             typer.echo('Invalid env')
 
