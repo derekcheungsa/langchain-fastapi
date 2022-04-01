@@ -157,14 +157,17 @@ PostgreSQL database on localhost:5432
 Adminer GUI on [localhost:8081](http://localhost:8081) 
 pgAdmin GUI on [localhost:5431](http://localhost:5431)
 
-### Database
+## Database
 You can rather install MySQL and PostgreSQL engine locally or simply use the Docker containers created above.
 Remember to change the .env connection variables if necessary.
 
 In the <i>app/db/sql/</i> folder you will find the needed DDL & DML scripts for the proper database setup.
 To enter to the Database through a UI, manage and execute the scripts you can use
 
-#### Database GUI tools
+### Changes
+  If some DDL changes are included to the database is preferred to remove the db container & the data folder (postgres_data or mysql_data) 
+
+#### GUI tools
 Included in the docker containers are 2 GUI tools; "<b>Adminer</b>" for many sql engines including MySQL & "<b>pgAdmin</b>" for PostgreSQL.
 
 If you prefer to install some on your machine we recommend one of the following... <br>
