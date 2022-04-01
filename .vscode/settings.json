@@ -16,5 +16,8 @@
     "autoDocstring.includeName": true,
     "autoDocstring.startOnNewLine": true,
     "restructuredtext.confPath": "",
-    "python.envFile": "${workspaceRoot}/.env"
+    "python.envFile": "${workspaceRoot}/.env",
+       "files.associations": {
+        "*.postgres": "sql"
+    }
 }

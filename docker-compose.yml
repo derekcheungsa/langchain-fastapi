@@ -14,8 +14,8 @@ services:
       - POSTGRES_DB=${DB_SCHEMA}
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
-      - ./app/db/sql/creates.postgresql:/docker-entrypoint-initdb.d/create_tables.sql
-      - ./app/db/sql/inserts.postgresql:/docker-entrypoint-initdb.d/fill_tables.sql
+      - ./app/db/sql/creates.postgres:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./app/db/sql/inserts.postgres:/docker-entrypoint-initdb.d/fill_tables.sql
 
   pgadmin:
     container_name: pgadmin4
