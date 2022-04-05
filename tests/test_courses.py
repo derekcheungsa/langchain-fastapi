@@ -17,6 +17,11 @@ def test_get_courses_one():
     assert response.status_code == 200
     assert type(response.json()) is dict
 
+def test_get_courses_slice():
+    response = client.get(f'{PATH}/slice', params={'start': 0, 'end': 2})
+    assert response.status_code == 200
+    assert type(response.json()) is list
+
 def test_courses_post_one():
     response = client.post(PATH, json={
         'title': 'Course 2',
