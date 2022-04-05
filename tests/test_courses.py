@@ -18,7 +18,7 @@ def test_get_courses_one():
     assert isinstance(response.json(), dict)
 
 def test_get_courses_slice():
-    response = client.get(f'{PATH}/slice', params={'start': 0, 'end': 2})
+    response = client.get(f'{PATH}slice', params={'start': 0, 'end': 2})
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
