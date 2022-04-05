@@ -3,22 +3,22 @@ from app.main import app
 
 client = TestClient(app)
 
-endpoint = '/courses/'
-id_course = client.get(endpoint).json()[0]['id']
-endpoint_one = f'{endpoint}{id_course}'
+PATH = '/courses/'
+id_course = client.get(PATH).json()[0]['id']
+PATH_one = f'{PATH}{id_course}'
 
-def test_courses_get_all():
-    response = client.get(endpoint)
+def test_get_courses_all():
+    response = client.get(PATH)
     assert response.status_code == 200
     assert type(response.json()) is list
 
-def test_courses_get_one():
-    response = client.get(endpoint_one)
+def test_get_courses_one():
+    response = client.get(PATH_one)
     assert response.status_code == 200
     assert type(response.json()) is dict
 
 def test_courses_post_one():
-    response = client.post(endpoint, json={
+    response = client.post(PATH, json={
         'title': 'Course 2',
         'description': '...',
         'hours': 15,
@@ -31,11 +31,11 @@ def test_courses_post_one():
     assert type(response.json()) is dict
 
 def test_courses_delete_one():
-    response = client.delete(endpoint_one)
+    response = client.delete(PATH_one)
     assert response.status_code == 200
     assert type(response.json()) is dict
 
-    response = client.get(endpoint_one)
+    response = client.get(PATH_one)
     assert response.status_code == 404
 
 def test_courses_put_one():
@@ -45,7 +45,7 @@ def test_courses_put_one():
           'hours': 150,
           'price': 899
     }
-    response = client.put(endpoint_one, json=course_data)
+    response = client.put(PATH_one, json=course_data)
     assert response.status_code == 200
     assert type(response.json()) is dict
 
