@@ -38,10 +38,10 @@ def test(html: bool = False):
     '''
     if html:
         typer.echo('Running tests & generating html report...')
-        shell('pytest -v --html=tests/report.html --self-contained-html tests/')
+        shell('pytest --pdb -v --html=tests/report.html --self-contained-html tests/')
     else:
         typer.echo('Running tests...')
-        shell('pytest -v tests/')
+        shell('pytest --pdb -v tests/')
 
 @app.command()
 def coverage(html: bool = False):
