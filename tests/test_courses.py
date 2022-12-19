@@ -3,28 +3,28 @@ from app.main import app
 
 client = TestClient(app)
 
-PATH = '/courses/'
-id_course = client.get(PATH).json()[0]['id']
-PATH_one = f'{PATH}{id_course}'
+PATH = '/cards/'
+id_card = client.get(PATH).json()[0]['id']
+PATH_one = f'{PATH}{id_card}'
 
-def test_get_courses_all():
+def test_get_cards_all():
     response = client.get(PATH)
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
-def test_get_courses_one():
+def test_get_cards_one():
     response = client.get(PATH_one)
     assert response.status_code == 200
     assert isinstance(response.json(), dict)
 
-def test_get_courses_slice():
+def test_get_cards_slice():
     response = client.get(f'{PATH}slice', params={'start': 0, 'end': 2})
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
-def test_courses_post_one():
+def test_cards_post_one():
     response = client.post(PATH, json={
-        'title': 'Course 2',
+        'title': 'Card 2',
         'description': '...',
         'hours': 15,
         'price': 199.19
@@ -35,7 +35,7 @@ def test_courses_post_one():
     assert sorted(fields) == sorted(['id', 'title', 'description', 'hours', 'price'])
     assert isinstance(response.json(), dict)
 
-def test_courses_delete_one():
+def test_cards_delete_one():
     response = client.delete(PATH_one)
     assert response.status_code == 200
     assert isinstance(response.json(), dict)
@@ -43,15 +43,15 @@ def test_courses_delete_one():
     response = client.get(PATH_one)
     assert response.status_code == 404
 
-def test_courses_put_one():
-    course_data = {
-          'title': 'Course 3',
+def test_cards_put_one():
+    card_data = {
+          'title': 'Card 3',
           'description': '...',
           'hours': 150,
           'price': 899
     }
-    response = client.put(PATH_one, json=course_data)
+    response = client.put(PATH_one, json=card_data)
     assert response.status_code == 200
     assert isinstance(response.json(), dict)
 
-    assert response.json()['course'] == course_data
+    assert response.json()['card'] == card_data
