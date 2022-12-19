@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from config import APP_CONFIG, Settings
 from app.shared.dependencies import get_settings
-from app.routers import courses
+from app.routers import cards
 
 app = FastAPI(**APP_CONFIG)
 
@@ -26,4 +26,4 @@ async def get_db(
     ) -> dict:
     return { 'db': settings.db_engine }
 
-app.include_router(courses)
+app.include_router(cards)
