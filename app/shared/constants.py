@@ -1,4 +1,6 @@
 from enum import Enum
 
 class Tags(Enum):
-    cards: str = 'cards'
+    courses: str = 'courses'
+    items = 'items'
+    users = 'users'
