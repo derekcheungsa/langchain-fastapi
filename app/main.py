@@ -1,29 +1,28 @@
-from fastapi import FastAPI, Depends
-from config import APP_CONFIG, Settings
-from app.shared.dependencies import get_settings
-from app.routers import courses
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
-app = FastAPI(**APP_CONFIG)
+class Item(BaseModel):
+    name: str
+    description: str = None
+    price: float
+    is_offer: bool = None
 
-@app.get('/', tags=['root'])
-async def root() -> dict:
-    '''' Root path get function
-    :return: {'api': 'FastAPI Template'}
-    '''
-    return {'api': 'FastAPI Template'}
+# assuming this is our "database"
+items_db = {
+    "1": {"name": "item1", "description": "This is item 1", "price": 25.0, "is_offer": True},
+    "2": {"name": "item2", "description": "This is item 2", "price": 45.0, "is_offer": False},
+}
 
-@app.get('/log', tags=['root'])
-async def insert_log(
-        msg: str,
-        settings: Settings = Depends(get_settings)
-    ) -> dict:
-    settings.info_logger.info(msg)
-    return { 'msg': 'message logged successfully' }
+app = FastAPI()
 
-@app.get('/db', tags=['root'])
-async def get_db(
-        settings: Settings = Depends(get_settings)
-    ) -> dict:
-    return { 'db': settings.db_engine }
+class ItemID(BaseModel):
+    id: str
 
-app.include_router(courses)
+@app.post("/items/")
+async def retrieve_item(item_id: ItemID):
+    item_id_dict = item_id.dict()
+    id = item_id_dict['id']
+    if id in items_db:
+        return {"message": f"Item retrieved: {items_db[id]['name']}", "data": items_db[id]}
+    else:
+        raise HTTPException(status_code=404, detail="Item not found")
