@@ -12,6 +12,6 @@ app = FastAPI()
 @app.post("/query/")
 async def process_query(query: Query):
     retriever = WikipediaRetriever()
-    docs = retriever.get_relevant_documents(query=query)
+    docs = retriever.get_relevant_documents(query=query.query)
     response = docs[0].page_content[:400]
     return {"reply": response }
